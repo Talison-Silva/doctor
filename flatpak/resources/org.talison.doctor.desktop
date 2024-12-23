@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Doctor
+Exec=/app/bin/doctor
+Icon=doctor
+Type=Application
+Categories=Utility;
