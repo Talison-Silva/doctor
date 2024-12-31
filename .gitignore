@@ -48,3 +48,8 @@ app.*.map.json
 /flatpak/.flatpak-builder
 /flatpak/build-dir
 /flatpak/repo
+
+
+# lib
+/lib/components/search.dart
+/lib/trash

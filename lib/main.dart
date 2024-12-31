@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:bitsdojo_window/bitsdojo_window.dart';
+
+import 'layout/content.dart';
+import 'layout/aside.dart';
+
+import 'pages/services.dart';
 
 void main() {
   runApp(const MyApp());
+
+  doWhenWindowReady(() {
+    const initialSize = Size(1024, 650);
+    appWindow.minSize = initialSize;
+    appWindow.size = initialSize;
+    appWindow.alignment = Alignment.center;
+    appWindow.show();
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -9,59 +23,73 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // quaternary: Color(0xFF484848),
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        brightness: Brightness.dark,
+        colorScheme: ColorScheme.dark(
+          background: Colors.red,
+          primary:    Color(0xFF1C1C1C),
+          secondary:  Color(0xFF2B2B2B),
+          tertiary:   Color(0xFF242424),
+        ),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Doctor(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
+class Doctor extends StatefulWidget {
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Doctor> createState() => _DoctorState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _DoctorState extends State<Doctor> {
+  String _content = "services";
 
-  void _incrementCounter() {
+  void navigate(String aba){
     setState(() {
-      _counter++;
+      _content = aba;
     });
+  }
+
+  Widget dynamicContent(){
+    switch (_content) {
+      case "services":
+        return Text("services");
+      case "home":
+        return Text("home");
+      case "agender":
+        return Text("agender");
+      case "comunity":
+        return Text("comunity");
+      case "settings":
+        return Text("settings");
+      default:
+        return Text("default");
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      backgroundColor: Colors.transparent,
+      body: ClipRRect(
+        borderRadius: BorderRadius.circular(12),
+        child: Row(
+          children:[
+            Aside(
+              navigate:navigate,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            Expanded(
+              child:Content(
+                child:dynamicContent(),
+              ),
+            )
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
