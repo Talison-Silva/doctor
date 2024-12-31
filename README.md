@@ -1,14 +1,6 @@
-# LibreOffice
-[![Coverity Scan Build Status](https://scan.coverity.com/projects/211/badge.svg)](https://scan.coverity.com/projects/211) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/307/badge)](https://bestpractices.coreinfrastructure.org/projects/307) [![Translation status](https://weblate.documentfoundation.org/widgets/libo_ui-master/-/svg-badge.svg)](https://weblate.documentfoundation.org/engage/libo_ui-master/?utm_source=widget)
+# Doctor
+<img align="right" width="200" src="https://raw.githubusercontent.com/Talison-Silva/doctor/c32eff932584e3fc0700bb8919093bb786fdb21f/flatpak/resources/icons/doctor.svg">
 
-<img align="right" width="150" src="https://opensource.org/wp-content/uploads/2009/06/OSIApproved.svg">
-
-LibreOffice is an integrated office suite based on copyleft licenses
-and compatible with most document formats and standards. Libreoffice
-is backed by The Document Foundation, which represents a large
-independent community of enterprises, developers and other volunteers
-moved by the common goal of bringing to the market the best software
-for personal productivity. LibreOffice is open source, and free to
-download, use and distribute.
-
+Doctor is an open-source application designed for computer maintenance technicians. The main goal of the project is to provide a robust platform for efficiently managing maintenance services, with essential features such as appointment scheduling, detailed report generation, and inventory management for spare parts.
+Currently, the project is in its early stages of development, with basic features implemented. In the future, Doctor will evolve into a complete and scalable solution, designed to meet the needs of professionals in the maintenance field, offering an integrated and optimized management experience.
 A quick overview of the LibreOffice code structure.
