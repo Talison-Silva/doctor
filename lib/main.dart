@@ -3,8 +3,9 @@ import 'package:bitsdojo_window/bitsdojo_window.dart';
 
 import 'layout/content.dart';
 import 'layout/aside.dart';
-
 import 'pages/services.dart';
+
+import 'router/widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,8 +24,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // quaternary: Color(0xFF484848),
-    return MaterialApp(
+    /*return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
@@ -38,6 +38,8 @@ class MyApp extends StatelessWidget {
       ),
       home: Doctor(),
     );
+    */
+    return ApplicationRouter();
   }
 }
 
