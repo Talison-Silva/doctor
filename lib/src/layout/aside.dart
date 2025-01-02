@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
+import 'package:flutter/material.dart';
 
 //import '../components/navigate/index.dart';
 import './header.dart';
@@ -9,12 +9,9 @@ import '../components/toggle-maximize.dart';
 import '../components/aside-item.dart';
 
 class Aside extends StatelessWidget {
-  final void Function(String) navigate;
-
   const Aside({
-    Key? key,
-    required this.navigate,
-  }):super(key:key);
+    super.key
+  });
 
   Widget header(){
     return Header(
@@ -31,7 +28,7 @@ class Aside extends StatelessWidget {
     );
   }
 
-  Widget content(){
+  Widget content(BuildContext context){
     return Expanded(
       child:Padding(
         padding:EdgeInsets.symmetric(vertical:12),
@@ -43,25 +40,25 @@ class Aside extends StatelessWidget {
                   text:"home",
                   icon:Icons.home_sharp,
                   iconOutline:Icons.home_sharp,
-                  navigate:navigate,
+                  go:"home",
                 ),
                 AsideItem(
                   text:"services",
                   icon:Icons.cases_rounded,
                   iconOutline:Icons.cases_outlined,
-                  navigate:navigate,
+                  go:"services",
                 ),
                 AsideItem(
                   text:"agender",
                   icon:Icons.calendar_month,
                   iconOutline:Icons.calendar_month_outlined,
-                  navigate:navigate,
+                  go:"agender",
                 ),
                 AsideItem(
                   text:"comunity",
                   icon:Icons.forum_rounded,
                   iconOutline:Icons.forum_outlined,
-                  navigate:navigate,
+                  go:"comunity",
                 )
               ],
             ),
@@ -70,7 +67,7 @@ class Aside extends StatelessWidget {
               text:"settings",
               icon:Icons.settings,
               iconOutline:Icons.settings_outlined,
-              navigate:navigate,
+              go:"settings",
             ),
           ]
         ),
@@ -89,7 +86,9 @@ class Aside extends StatelessWidget {
       child:Column(
         children:[
           header(),
-          content(),
+          content(
+            context
+          ),
         ]
       ),
     );

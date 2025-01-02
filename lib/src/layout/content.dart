@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 
-import './header.dart';
 import '../components/window-bttns.dart';
+import './header.dart';
 
 class Content extends StatelessWidget {
   final Widget child;

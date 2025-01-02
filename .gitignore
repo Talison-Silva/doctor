@@ -51,5 +51,4 @@ app.*.map.json
 
 
 # lib
-/lib/components/search.dart
 /lib/trash

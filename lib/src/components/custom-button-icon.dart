@@ -4,12 +4,12 @@ import 'package:bitsdojo_window/bitsdojo_window.dart';
 class CustomButtonIcon extends StatelessWidget {
   final IconData icon;
   final VoidCallback eventTap;
-  final VoidCallback eventDoubleTap;
+  final VoidCallback? eventDoubleTap;
   final Color? color;
 
   const CustomButtonIcon({
     Key? key,
-    required this.eventDoubleTap,
+    this.eventDoubleTap,
     required this.eventTap,
     required this.icon,
     this.color,
@@ -19,7 +19,6 @@ class CustomButtonIcon extends StatelessWidget {
   Widget build(BuildContext context){
 
     return GestureDetector(
-      onDoubleTap: eventDoubleTap,
       onTap: eventTap,
       child:Container(
         width:26,
@@ -33,5 +32,11 @@ class CustomButtonIcon extends StatelessWidget {
         ),
       ),
     );
+
+    /*
+    child:Center(
+      child:Icon(icon,size:14),
+    ),
+    */
   }
 }
