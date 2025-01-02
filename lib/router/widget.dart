@@ -2,20 +2,20 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 
 // Pages
-import '../pages/home.dart';
-import '../pages/services.dart';
-import '../pages/agender.dart';
-import '../pages/comunity.dart';
-import '../pages/settings.dart';
+import '../src/pages/home.dart';
+import '../src/pages/services.dart';
+import '../src/pages/agender.dart';
+import '../src/pages/comunity.dart';
+import '../src/pages/settings.dart';
 //  lembre-se de criar uma pagina de notas , anotaçoes
 
 
 final _router = GoRouter(
-  initialLocation:'/',
+  initialLocation:'/home',
   routes:[
     GoRoute(
       name:'home',
-      path:'/',
+      path:'/home',
       builder: (context,state) => HomePage(),
     ),
     GoRoute(
@@ -49,7 +49,34 @@ class ApplicationRouter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context){
+    /*return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        colorScheme: ColorScheme.dark(
+          background: Colors.red,
+          primary:    Color(0xFF1C1C1C),
+          secondary:  Color(0xFF2B2B2B),
+          tertiary:   Color(0xFF242424),
+        ),
+        useMaterial3: true,
+      ),
+      home: Doctor(),
+    );
+    */
+
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        colorScheme: ColorScheme.dark(
+          background: Colors.red,
+          primary:    Color(0xFF1C1C1C),
+          secondary:  Color(0xFF2B2B2B),
+          tertiary:   Color(0xFF242424),
+        ),
+        useMaterial3: true,
+      ),
       routerConfig: _router,
     );
   }
